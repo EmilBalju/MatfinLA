@@ -1,0 +1,135 @@
+\documentclass[compress]{beamer}
+\usetheme{sthlm}
+
+\usepackage{
+booktabs,
+datetime,
+dtk-logos,
+graphicx,
+multicol,
+pgfplots,
+ragged2e,
+tabularx,
+tikz,
+wasysym
+}
+\pgfplotsset{compat=1.8}
+
+\usepackage[utf8]{inputenc}
+\usepackage{newpxtext,newpxmath}
+
+\usepackage{listings}
+\lstset{ %
+language=[LaTeX]TeX,
+basicstyle=\normalsize\ttfamily,
+keywordstyle=,
+numbers=left,
+numberstyle=\tiny\ttfamily,
+stepnumber=1,
+showspaces=false,
+showstringspaces=false,
+showtabs=false,
+breaklines=true,
+frame=tb,
+framerule=0.5pt,
+tabsize=4,
+framexleftmargin=0.5em,
+framexrightmargin=0.5em,
+xleftmargin=0.5em,
+xrightmargin=0.5em
+}
+
+\usetikzlibrary{
+backgrounds,
+mindmap
+}
+
+\setbeameroption{show notes}
+
+\title{Ejercicios de \\ matemáticas  \\financieras}
+\subtitle{Equipo 1}
+
+\hypersetup{
+pdfauthor = {Ami}
+pdfsubject = {Mathematics, },
+pdfkeywords = {},  
+pdfmoddate= {D:\pdfdate},          
+pdfcreator = {}
+}
+\date{27 de Octubre del 2020}
+%\title{Ejercicios de \\
+%Matemáticas \\ Financieras}
+\institute{Universidad Autónoma de Yucatan}
+%\logo{\includegraphics[width=2.0cm]{fig/Univ}}
+%\titlegraphic{\includegraphics[width=2.0cm]{fig/Univ}}
+\begin{document}
+%\setbeamercovered{transparent} 
+%\setbeamertemplate{navigation symbols}{} 
+%\logo{} 
+%\institute{} 
+%\date{} 
+%\subject{} 
+
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+%\begin{frame}
+%\tableofcontents
+%\end{frame}
+
+\begin{frame}\frametitle{Ejercicio 1}
+\begin{block}{Si $\partial (t)=0.01t$ $0\leq t \leq 2$, encuentra la tasa de interés efectiva anual equivalente sobre el intervalo $0\leq t \leq 2$.}
+Sabemos que:
+$$e^{\int_{0}^{n} \delta_{t} \,dt} = a(n) = (1 + i)^{n}$$
+Cómo buscamos la tasa de interés efectiva anual, estamos buscando el valor de i. Así que esto lo podemos ver de la siguiente manera:
+$$e^{\int_{0}^{2} 0.01t \,dt} = e^{1/50} = 1.0202$$
+Entonces
+$$1.0202 = (1 + i)^{2}$$
+Así que:
+$$\sqrt{1.0202} = (1 + i)$$
+$$1.01 - 1 = 0.01 = i$$
+Nuestra tasa de interés efectiva anual equivalente es de 0.01
+\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{Ejercicio 2}
+\begin{block}{La fuerza de interés al tiempo de t es $\dfrac{t^{3}}{100}$. Encuentra $a^{-1}(3)$.}
+Sabemos por información previa que $a^{-1}(t)$ es conocida como la función descuento, y para nuestro caso $a^{-1}(t) = \dfrac{1}{(1 + i)^{t}}$. \\ Eso nos da a entender que $a^{-1}(3) = \dfrac{1}{(1 + i)^{3}}$, el único valor que nos haría falta es i, pero eso lo podemos obtener a partir de la fuerza de interés.
+Sabemos que:
+$$e^{\int_{0}^{n} \delta_{t} \,dt} = a(n) = (1 + i)^{n}$$
+Cómo estamos buscando el valor de i, esto lo podemos ver de la siguiente manera:
+\end{block}
+\end{frame} 
+
+\begin{frame}\frametitle{Ejercicio 2}
+\begin{block}{Continuación}
+$$e^{\int_{0}^{3} \dfrac{t^{3}}{100} \,dt} = e^{81/400} = 1.2244$$
+Entonces
+$$1.2244 = (1 + i)^{3}$$
+Así que:
+$$\sqrt[3]{1.2244} = (1 + i)$$
+$$1.0698 - 1 = 0.0698 = i$$
+Por lo que nuestro valor de $i=0.0698$, así que nuestra $a^{-1}(3)$ es:
+$$a^{-1}(3) = \dfrac{1}{(1 + 0.0698)^{3}} = 0.8167$$
+\end{block}
+\end{frame} 
+
+\begin{frame}\frametitle{Ejercicio 3}
+\begin{block}{Encuentra la tasa anual promedio de interés efectiva al inicio de los 3 años el cual es equivalente a una tasa de descuento efectiva de $8\%$ el primer año, $7\%$ el segundo y $6\%$ el tercero}
+La tasa anual promedio de interés efectiva, lo podemos ver de la siguiente manera:
+$$i= \dfrac{d_{1}+ d_{2}+ d_{3}}{3}$$
+Esto es igual a:
+$$i= \dfrac{[\dfrac{A(1)-A(0)}{A(1)} + \dfrac{A(2)-A(1)}{A(2)} + \dfrac{A(3)-A(2)}{A(3)}]}{3}$$
+\end{block}
+\end{frame}
+\begin{frame}\frametitle{Ejercicio 3}
+\begin{block}{Continuación}
+Esto es igual a:
+$$i= \dfrac{[\dfrac{1.08-1}{1.08} + \dfrac{1.07-1}{1.07} + \dfrac{1.06-1}{1.06}]}{3}$$
+$$i= \dfrac{[\dfrac{0.08}{1.08} + \dfrac{0.07}{1.07} + \dfrac{0.06}{1.06}]}{3}$$
+$$i = \dfrac{0.1960}{3} = 0.0653$$
+\end{block}
+\end{frame} 
+\end{document}
